@@ -1,6 +1,6 @@
 # Web Programming study
 <hr>
-
+*test.html*은 연습 파일
 ## Week 1
 
 1. 강의 개요
@@ -10,7 +10,7 @@
 4. Visual Studio Code: 설치 및 유용한 plug-in
   
 5. (실습) Visual Studio Code로 간단한 html 문서 작성
-   -  week1.html 파일 참고 
+   -  **week1.html** 파일 참고 
 
 ## Week 2
 
@@ -19,6 +19,6 @@
 3. 폼 요소와 멀티미디어
   
 5. (실습) HTML 문서 작성
-   -  week2.html 파일 참고
+   -  **week2.html** 파일 참고
 
 ## Week 3
