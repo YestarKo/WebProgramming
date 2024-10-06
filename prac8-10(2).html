@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 객체 동적 삽입</title>
+    <script>
+        function addAnswer(obj, text){
+            let parent = obj.parentElement;//부모 객체 알아내기 후 
+            //그 부모 객체를 parent에 저장.
+
+            /*
+            obj.parentElement는 
+            버튼이 속해 있는 부모 요소인 <div>를 가져온다.
+            이를 통해 버튼이 어느 div에 속해 있는지 파악.
+            */
+
+            if(obj != parent.lastElementChild){//obj가 부모 요소(parent)의 마지막 자식 요소가 아니라면
+                //함수 종료
+                return;
+            }
+
+            /*
+            버튼이 해당 div의 마지막 자식 요소가 아닌 경우, 
+            즉 버튼이 마지막 요소가 아니라면 함수가 바로 종료. 
+            이 코드는 버튼이 div의 마지막 자식 요소일 때만 
+            새로운 <p> 태그를 생성하고, 그 안에 텍스트를 삽입.
+            */
+
+            let answer = document.createElement("p");
+            answer.innerHTML=text;
+            parent.appendChild(answer);
+
+            //answer.onclick = parent.removeChild(answer);
+            
+            /*
+            이 줄은 클릭 이벤트 핸들러를 할당하는 것이 아니라, 
+            removeChild 함수를 즉시 실행하고 
+            그 결과(일반적으로 null)를 onclick에 할당하는 것.
+            즉, 클릭했을 때 실행될 함수가 아니라, 스크립트가 실행되는 순간에 
+            이미 removeChild(answer)가 실행되어 해당 요소가 삭제되며, 
+            클릭 이벤트와는 무관하게 동작하게 됨.
+            */
+
+            //정답을 '클릭하면' 해당 정답이 사라지게 하는 코드
+            answer.onclick=function(){
+                parent.removeChild(this);
+            };
+        }
+    </script>
+</head>
+<body>
+    <h3>정답의 동적 삽입</h3>
+    <hr>
+    <div>
+        <p>Q. 거울아 거울아 세상에서 누가 제일 예쁘니?</p>
+        <button onclick="addAnswer(this,'백설공주')">답보기</button>
+    </div>
+    <div>
+        <p>Q. 죽느냐 사느냐 어떤 것이 문제인가?</p>
+        <button onclick="addAnswer(this,'둘다')">답보기</button>
+    </div>
+</body>
+</html>
