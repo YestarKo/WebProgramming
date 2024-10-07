@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라면을 끓이는 순서</title>
+    <script>
+        function olClick(){
+            let obj=document.getElementById("list");
+            let noodleOrder = prompt('라면을 끓이는 순서를 입력하라');
+            if(noodleOrder==null||noodleOrder=="")
+                return;
+            let newLi=document.createElement("li");
+            newLi.innerHTML = noodleOrder;
+            obj.appendChild(newLi);
+        }
+    </script>
+</head>
+<body>
+    <h3>라면을 끓이는 순서</h3>
+    <hr>
+    <ol id="list" onclick="olClick()" type="A" style="background-color: yellowgreen;">
+        <li>물을 끓인다</li>
+    </ol>
+</body>
+</html>
