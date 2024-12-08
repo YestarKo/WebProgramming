@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage</title>
+    <script>
+        function store(){
+            if(!window.sessionStorage){
+                alert("세션 스토리지 지원 안됨!");
+                return;
+            }
+            let item= document.getElementById("item");
+            let count = document.getElementById("count");
+            sessionStorage.setItem(item.value,count.value);
+        }
+        function retrieve(){
+            if(!window.sessionStorage){
+                alert("세션 스토리지 지원 안됨!");
+                return;
+            }
+            let item= document.getElementById("item");
+            let value = sessionStorage.getItem(item.value);
+            if(value==null){
+                alert(item.value+"는 없다.");
+            }else{
+                alert(item.value+"는"+value+"개 있다.");
+                let count = document.getElementById("count");
+                count.value = value;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>세션 스토리지에 구입 리스트 저장/검색</h3>
+    <hr>
+    품목명: <input type="text" name="" id="item">
+    개수: <input type="text" name="" id="count">
+    <input type="button" name="" id=""  value="저장"onclick="store()">
+    <input type="button" name="" id=""  value="검색"onclick="retrieve()">
+    <script>
+
+    </script>
+</body>
+</html>

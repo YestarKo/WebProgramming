@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function changeText(text){
+            let command = prompt('html텍스트 혹은 그냥 텍스트 입력');//" " 와 ' '의 차이
+            text.innerHTML=command;
+        }
+        function doShow(){
+            let ui =prompt('html텍스트 혹은 그냥 텍스트 입력');
+            let p = document.getElementById("p");
+            p.innerHTML = ui;
+        }
+    </script>
+</head>
+<body>
+    <h3>innerHTML</h3>
+    <hr>
+    <p onclick="changeText(this)">이번 여름 어디?</p><!--이걸 넘겨준다. this쓴다..? this가 넘겨주는 게 뭔가-->
+    <p id="p" onclick="doShow()">여름</p>
+</body>
+</html>

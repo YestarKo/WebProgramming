@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function eraseOneNumber(){
+            let result = document.getElementById("result");
+            let len = result.value.length;
+            if(len==0)
+                return;
+            else
+                result.value = result.value.slice(0,-1);
+        }
+        function calculate(){
+            let result = document.getElementById("result");
+            result.value = eval(result.value);
+        }
+        function clearResult(){
+            let result = document.getElementById("result");
+            result.value = "0";
+        }
+        function addInput(e){
+            let result = document.getElementById("result");
+            if(result.value=="0"){
+                result.value=e;
+            }
+            else
+                result.value+=e;
+        }
+    </script>
+    <style>
+        table {
+            text-align : center;
+            border : 0;
+            width : 300px;
+        }
+        tr {
+            text-align : center;
+        }
+        td {
+            width : 80px;
+        }
+        input[type=button] {
+            width : 60px;
+        }
+    </style>
+</head>
+<body>
+    <h3>계산기 만들기</h3>
+    <hr>
+    <form>
+        <table>
+            <tr>
+                <td><input type="text" id="result"  value="0"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="back" value="BACK" onclick="eraseOneNumber()"></td>
+                <td><input type="button" id="ce" value="CE" onclick="clearResult()"></td>
+                <td><input type="button" id="c" value="C" onclick="clearResult();"></td>
+                <td><input type="button" id="equal" value="=" onclick="calculate()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="seven" value="7"  onclick="addInput(this.value)"></td>
+                <td><input type="button" id="eight" value="8"  onclick="addInput(this.value)"></td>
+                <td><input type="button" id="nine" value="9"  onclick="addInput(this.value)"></td>
+                <td><input type="button" id="divide" value="/"  onclick="addInput(this.value)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="four" value="4"  onclick="addInput(this.value)"></td>
+                <td><input type="button" id="five" value="5"  onclick="addInput(this.value)"></td>
+                <td><input type="button" id="six" value="6"  onclick="addInput(this.value)"></td>
+                <td><input type="button" id="mul" value="*"  onclick="addInput(this.value)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="one" value="1"  onclick="addInput(this.value)"></td>
+                <td><input type="button" id="two" value="2"  onclick="addInput(this.value)"></td>
+                <td><input type="button" id="three" value="3"  onclick="addInput(this.value)"></td>
+                <td><input type="button" id="minus" value="-"  onclick="addInput(this.value)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="zero" value="0"  onclick="addInput(this.value)"></td>
+                <td><input type="button" id="plus" value="+"   onclick="addInput(this.value)"></td>
+                <td><input type="button" id="NONE1" value="NONE" ></td>
+                <td><input type="button" id="NONE2" value="NONE" ></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

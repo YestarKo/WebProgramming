@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Generation</title>
+    <script>
+        function register(){
+            this.nStudent++;
+        }
+    </script>
+</head>
+<body>
+    <h3>1. 직접 객체 만들기</h3>
+    <br>
+    <script>
+        let course1=new Object();
+        course1.korName="웹프";
+        course1.engName="Webp";
+        course1.classCode="v10";
+        course1.nStudent=0;
+        course1.register=register();
+        course1.unregister = function(){
+            this.nStudent--;
+        }
+        course1.getStudentCount=function(){
+            return this.nStudent;
+        }
+        document.write("교과목 이름 = ",course1.korName,"<br>");
+        document.write("교과목 영문 이름 = ",course1.engName,"<br>");
+        document.write("클래스 코드 = ",course1.nStudent,"<br>");
+    </script>
+
+<h3>2. 리터럴 표기법</h3>
+<br>
+<script>
+    let course2 = {
+        korName:"클라우드 컴퓨팅",
+        engName:"cloudcomp",
+        classCode:"va1212",
+        nStudent:0,
+        register : register,
+        unregister:function(){
+            this.nStudent--;
+        },
+        getStudentCount:function(){
+            return this.nStudent;
+        },
+    };
+    document.write("교과목 이름 = ",course2.korName,"<br>");
+    document.write("교과목 영문 이름 = ",course2.engName,"<br>");
+    document.write("클래스 코드 = ",course2.nStudent,"<br>");
+</script>
+
+
+<h3>3. 프로토타입</h3>
+<br>
+<script>
+    function Course(korName,engName,classCode){
+        this.korName=korName;
+        this.engName=engName;
+        this.classCode=classCode;
+        this.nStudent=0;
+        this.register=register;
+        this.unregister = function(){
+            this.nStudent--;
+        }
+        this.getStudentCount=function(){
+            return this.nStudent;
+        }
+    };
+    let course3 =new Course("프언","PL","a123123");
+    document.write("교과목 이름 = ",course3.korName,"<br>");
+    document.write("교과목 영문 이름 = ",course3.engName,"<br>");
+    document.write("클래스 코드 = ",course3.nStudent,"<br>");
+</script>
+</body>
+</html>
