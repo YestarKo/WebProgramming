@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O</title>
+</head>
+<body>
+    <canvas id="oCanvas" style="background-color: aliceblue;" width="100" height="100"></canvas>
+
+    <script>
+        const canvas = document.getElementById('oCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw O
+        ctx.beginPath();
+        ctx.arc(50, 50, 40, 0, Math.PI * 2, false); // Center (50, 50), radius 40
+        ctx.stroke();
+    </script>
+</body>
+</html>

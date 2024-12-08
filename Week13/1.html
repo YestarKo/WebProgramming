@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고예성 - 1</title>
+    <script>
+        function checkAnswer() {
+            const selectedValue = document.getElementById('answerSelect').value;
+            const windowOptions = "width=100,height=120,top=300,left=300";
+
+            if (selectedValue === '5') {
+                // 새 창에 O 표시 (정답)
+                window.open('o.html', '_blank', windowOptions);
+            } else {
+                // 새 창에 X 표시 (오답)
+                window.open('x.html', '_blank', windowOptions);
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <hr>
+    <p>2+3=?</p>
+
+    <!-- 정답을 선택하는 select 박스 -->
+    <select id="answerSelect" onchange="checkAnswer()">
+        <option value="1" selected>1</option>
+        <option value="3">3</option>
+        <option value="5">5</option>
+        <option value="6">7</option>
+    </select>
+</body>
+</html>

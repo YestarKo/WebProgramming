@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X</title>
+</head>
+<body>
+    <canvas id="xCanvas" width="100" height="100" style="background-color: aliceblue;"></canvas>
+
+    <script>
+        const canvas = document.getElementById('xCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw X
+        ctx.beginPath();
+        ctx.moveTo(20, 20); // Starting point of X
+        ctx.lineTo(80, 80); // Diagonal line of X
+        ctx.moveTo(80, 20); // Starting point of opposite diagonal
+        ctx.lineTo(20, 80); // Opposite diagonal line of X
+        ctx.stroke();
+    </script>
+</body>
+</html>
