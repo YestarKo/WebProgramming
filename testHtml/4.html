@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고예성 - 4</title>
+    <style>
+        #a1, #a2 {
+            background-color: beige;
+            width: 70px;
+            height: 20px;
+            text-align: center; /* 가운데 정렬 */
+        }
+
+        /* = 버튼 스타일 */
+        #dosum {
+            background-color: blue;
+            color: white;
+            height: 26px;
+        }
+
+        /* 결과 박스 스타일 */
+        #res {
+            background-color: aliceblue;
+            width: 70px;
+            height: 20px;
+            text-align: center; /* 가운데 정렬 */
+        }
+    </style>
+</head>
+<body>
+    <h3>Adder</h3>
+    <hr>
+    <input type="text" name="" id="a1">&nbsp;&nbsp; + &nbsp;&nbsp;
+    <input type="text" name="" id="a2">&nbsp;&nbsp;
+    <input type="button" value = "=" id="dosum"onclick="sum();">&nbsp;&nbsp;
+    <input type="text" id = "res">
+    <script>
+        function sum(){
+            let a1 = parseInt(document.getElementById("a1").value);
+            let a2 = parseInt(document.getElementById("a2").value);
+            let res = document.getElementById("res");
+            let result = a1+a2;
+            res.value= result;
+        }
+    </script>
+</body>
+</html>
